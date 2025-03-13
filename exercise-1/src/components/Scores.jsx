@@ -1,3 +1,5 @@
+import Statistic from "./Statistic";
+
 function isScoreFailing(score){
     return score < 50 ? <td className="warning">{score}</td> : <td>{score}</td>;
 }
@@ -24,6 +26,15 @@ export default function Scores({courseName, courseResult}) {
               </tr>
             )}
             </tbody>
+            
+            <thead>
+              <tr>
+                <th>Average</th>
+                <th>Min</th>
+                <th>Max</th>
+              </tr>
+            </thead>
+            <Statistic courseResult = {courseResult} />
           </table>
         </div>
     );
