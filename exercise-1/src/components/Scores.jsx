@@ -1,3 +1,7 @@
+function isScoreFailing(score){
+    return score < 50 ? <td className="warning">{score}</td> : <td>{score}</td>;
+}
+
 export default function Scores({courseName, courseResult}) {
     return (
         <div className="scores">
@@ -16,7 +20,7 @@ export default function Scores({courseName, courseResult}) {
                 <tr>
                     <td>{record.firstName}</td>
                     <td>{record.lastName}</td>
-                    <td>{record.score}</td>
+                    {isScoreFailing(record.score)}
               </tr>
             )}
             </tbody>
