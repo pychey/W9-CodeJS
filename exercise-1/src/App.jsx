@@ -1,4 +1,9 @@
 import Header from "./components/Header";
+import Scores from "./components/Scores";
+import { JAVA_RESULTS } from "./data";
+import { HTML_RESULTS } from "./data";
+import { PYTHON_RESULTS } from "./data";
+import { ENGLISH_RESULTS } from "./data";
 
 function App() {
   return (
@@ -6,31 +11,10 @@ function App() {
       <Header batchName = "PNC batch 2024"/>
 
       <main className="scores-container">
-        <div className="scores">
-          <h1>Fake Course</h1>
-
-          <table>
-            <thead>
-              <tr>
-                <th>First name</th>
-                <th>Last name</th>
-                <th>Score</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>First name 1 </td>
-                <td>Last name 1 </td>
-                <td>55</td>
-              </tr>
-              <tr>
-                <td>First name 2 </td>
-                <td>Last name 2 </td>
-                <td>45</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <Scores courseName ="Java" courseResult={ JAVA_RESULTS }/>
+        <Scores courseName ="HTML" courseResult={ HTML_RESULTS }/>
+        <Scores courseName ="Python" courseResult={ PYTHON_RESULTS }/>
+        <Scores courseName ="English" courseResult={ ENGLISH_RESULTS }/>
       </main>
     </>
   );
